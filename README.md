@@ -3,7 +3,7 @@
 [![Paper](https://img.shields.io/badge/Paper-Preprint_Available-blue)](#) 
 *(Link to arXiv will be added upon endorsement)*
 
-**Official codebase for the paper:** *Predicting Cross-Lingual Tokenization Fragmentation: A Frequency-Based Uniqueness Score for Geographic Entities.*
+**Official codebase for the paper:** *Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities.*
 
 ## Overview
 Large language models often penalize multilingual users through hidden "tokenizer taxes" caused by subword fragmentation. Geographic proper nouns offer a controlled stress case for this distributional asymmetry, as they are standardized, cross-linguistically available entities whose orthographic forms frequently mismatch tokenizer training distributions.
@@ -12,7 +12,7 @@ This repository introduces the **Cross-Linguistic Orthographic Uniqueness Score 
 
 Evaluated against six production tokenizers across eleven languages, CLOUS shows significant associative strength with tokenization fertility in 61 of 65 valid combinations. Furthermore, CLOUS maintains a positive correlation with fragmentation where naive length-based baselines (byte length and character count) demonstrate negative correlations, proving that CLOUS captures orthographic complexity beyond simple string length.
 
-CLOUS serves as a lightweight, pre-tokenization diagnostic for multilingual NLP pipelines.
+As a high-risk entity screening tool, CLOUS achieves ROC-AUC = 0.850 and F1 = 0.741, correctly identifying approximately three-quarters of the highest-fragmentation entities from orthographic properties alone — without model inference. CLOUS serves as a lightweight, pre-tokenization diagnostic for multilingual NLP pipelines."
 
 ## Repository Structure
 The project is organized as follows:
@@ -35,8 +35,8 @@ If you use CLOUS or this evaluation pipeline in your research, please cite the a
 
 ```bibtex
 @article{rivera2026clous,
-  title={Predicting Cross-Lingual Tokenization Fragmentation: A Frequency-Based Uniqueness Score for Geographic Entities},
+title={Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities},
   author={Rivera, Richard},
   year={2026},
-  note={Independent Research, Preprint}
+  note={Independent Research, Preprint. arXiv preprint available at https://github.com/ric-rivera/CLOUS-tokenization-metrics}
 }
