@@ -1,6 +1,6 @@
 # CLOUS: Cross-Linguistic Orthographic Uniqueness Score
 
-Official codebase for the paper: **Predicting Cross-Lingual Tokenization Fragmentation: A Frequency-Based Uniqueness Score for Geographic Entities**.
+Official codebase for the paper: Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities.
 
 ## Overview
 Subword tokenizers distribute vocabulary coverage unevenly across languages and scripts, concentrating entries on character sequences that are frequent in training corpora. Geographic proper nouns are a reproducible stress case for this distributional asymmetry.
@@ -9,10 +9,10 @@ This repository introduces the Cross-Linguistic Orthographic Uniqueness Score (C
 
 ## Repository Structure
 The project is organized as follows:
-* **`raw_corpora/`**: Leipzig Corpora Collection character frequency files used to build language-specific profiles.
-* **`cache/`**: Serialized JSON frequency maps and intermediate pipeline results.
-* **`CLOUS_pipeline.ipynb`**: Main Google Colab notebook containing the complete reproducible evaluation pipeline.
-* **`results/`**: Final outputs, including `Figure_1_CLOUS_Heatmap.png`, `Figure_2_Stratified_Scatter.png`, and `Table_3_Djibouti_Effect.csv`.
+* `raw_corpora/`: Leipzig Corpora Collection character frequency files used to build language-specific profiles.
+* `cache/`: Serialized JSON frequency maps and intermediate pipeline results (benchmark_results.csv, final_stats.csv, and clous_scores.csv).
+* `CLOUS_pipeline.ipynb`: Main Google Colab notebook containing the complete reproducible evaluation pipeline.
+* `results/`: Final outputs, including Figure_1_CLOUS_Heatmap.png, Figure_2_Stratified_Scatter.png
 
 ## Usage
 To reproduce the findings or calculate CLOUS scores for new entities:
@@ -22,9 +22,10 @@ To reproduce the findings or calculate CLOUS scores for new entities:
 
 ## Citation
 If you use CLOUS in your research, please cite the associated paper:
+
 ```bibtex
 @article{rivera2026clous,
-  title={Predicting Cross-Lingual Tokenization Fragmentation: A Frequency-Based Uniqueness Score for Geographic Entities},
+  title={Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities},
   author={Rivera, Richard},
   year={2026},
   note={Independent Research}
