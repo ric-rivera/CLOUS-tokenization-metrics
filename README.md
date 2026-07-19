@@ -10,7 +10,7 @@ Subword tokenizers distribute vocabulary coverage unevenly across languages and 
 
 This repository introduces the Cross-Linguistic Orthographic Uniqueness Score (CLOUS), a character-level metric based on Shannon surprisal that quantifies the orthographic rarity of localized country names. Evaluated against six production tokenizers across eleven languages, CLOUS shows significant associative strength with tokenization fertility, outperforming naive length-based baselines. 
 
-CLOUS serves as a lightweight pre-tokenization diagnostic for multilingual NLP pipelines. As a high-risk entity screening tool, CLOUS achieves ROC-AUC = 0.850 and F1 = 0.741, correctly identifying approximately three-quarters of the highest-fragmentation entities from orthographic properties alone without model inference.
+CLOUS serves as a lightweight pre-tokenization diagnostic for multilingual NLP pipelines, outperforming both naive length-based baselines and a character bigram surprisal baseline in 72% of language-tokenizer combinations. As a high-risk entity screening tool, CLOUS achieves ROC-AUC = 0.850 and F1 = 0.741, correctly identifying approximately three-quarters of the highest-fragmentation entities from orthographic properties alone without model inference.
 
 ## 🚀 Live Diagnostic Tool
 
