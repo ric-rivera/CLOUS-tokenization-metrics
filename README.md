@@ -10,9 +10,9 @@ Subword tokenizers distribute vocabulary coverage unevenly across languages and 
 
 This repository introduces the Cross-Linguistic Orthographic Uniqueness Score (CLOUS), a character-level metric based on Shannon surprisal that quantifies the orthographic rarity of localized country names. Evaluated against six production tokenizers across eleven languages, CLOUS shows significant associative strength with tokenization fertility. 
 
-CLOUS serves as a lightweight pre-tokenization diagnostic for multilingual NLP pipelines. It outperforms length-based baselines across all evaluated scripts and beats a 1-million-word character bigram surprisal model in 66.2% of tested combinations, particularly for logographic, syllabic, and Latin scripts. Conversely, the bigram baseline proves superior for morphophonologically complex scripts like Arabic and Devanagari, indicating that tokenizer fragmentation is driven by local orthographic context in some scripts and absolute character rarity in others. 
+CLOUS serves as a lightweight pre-tokenization diagnostic for multilingual NLP pipelines. It outperforms length-based baselines across all evaluated scripts and beats a 1-million-word character bigram surprisal model in 69.2% of tested combinations, particularly for logographic, syllabic, and Latin scripts. Conversely, the bigram baseline proves superior for morphophonologically complex scripts like Arabic and Devanagari, indicating that tokenizer fragmentation is driven by local orthographic context in some scripts and absolute character rarity in others. 
 
-As a high-risk entity screening tool, CLOUS achieves ROC-AUC = 0.850 and F1 = 0.741, correctly identifying approximately three-quarters of the highest-fragmentation entities from orthographic properties alone without model inference.
+As a high-risk entity screening tool, CLOUS achieves ROC-AUC = 0.850 and F1 = 0.740, correctly identifying approximately three-quarters of the highest-fragmentation entities from orthographic properties alone without model inference.
 
 ## 🚀 Live Diagnostic Tool
 
