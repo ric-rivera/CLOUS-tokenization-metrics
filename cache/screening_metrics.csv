@@ -1,0 +1,2 @@
+roc_auc,precision,recall,f1,q1_mean_fertility,q2_mean_fertility,q3_mean_fertility,q4_mean_fertility,q1_to_q4_pct_increase,r2,mae,rmse,intercept,slope
+0.85,0.751,0.729,0.74,0.461,0.457,0.53,1.019,120.9,0.384,0.212,0.308,-0.05,0.103
