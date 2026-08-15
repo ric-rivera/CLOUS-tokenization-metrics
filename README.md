@@ -2,17 +2,19 @@
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/ric-rivera/CLOUS-Tokenizer-Diagnostic)
 
-Official codebase for the paper: *Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities*.
+Codebase for the independent research project: *Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities*.
 
 ## Overview
 
 Subword tokenizers distribute vocabulary coverage unevenly across languages and scripts, concentrating entries on character sequences that are frequent in training corpora. Geographic proper nouns are a reproducible stress case for this distributional asymmetry.
 
-This repository introduces the Cross-Linguistic Orthographic Uniqueness Score (CLOUS), a character-level metric based on Shannon surprisal that quantifies the orthographic rarity of localized country names. Evaluated against six production tokenizers across eleven languages, CLOUS shows significant associative strength with tokenization fertility. 
+This repository introduces the Cross-Linguistic Orthographic Uniqueness Score (CLOUS), a character-level metric based on Shannon surprisal that quantifies the orthographic rarity of localized country names. Evaluated against six production tokenizers across eleven languages, CLOUS shows significant associative strength with tokenization fertility in 61 of 65 valid language-tokenizer combinations after Benjamini-Hochberg correction.
 
 CLOUS serves as a lightweight pre-tokenization diagnostic for multilingual NLP pipelines. It outperforms length-based baselines across all evaluated scripts and beats a 1-million-word character bigram surprisal model in 69.2% of tested combinations, particularly for logographic, syllabic, and Latin scripts. Conversely, the bigram baseline proves superior for morphophonologically complex scripts like Arabic and Devanagari, indicating that tokenizer fragmentation is driven by local orthographic context in some scripts and absolute character rarity in others. 
 
 As a high-risk entity screening tool, CLOUS achieves ROC-AUC = 0.850 and F1 = 0.740, correctly identifying approximately three-quarters of the highest-fragmentation entities from orthographic properties alone without model inference.
+
+This is an independent research project and has not been peer-reviewed or formally published. It is shared for reproducibility and practical use.
 
 ## 🚀 Live Diagnostic Tool
 
