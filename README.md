@@ -139,12 +139,12 @@ These are possible extensions, not completed results.
 If you use the metric, code, or benchmark in your work, please cite the independent manuscript and identify the repository version or commit used.
 
 ```bibtex
-@misc{rivera2026clous,
-  title = {Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities},
-  author = {Rivera, Richard},
-  year = {2026},
-  howpublished = {GitHub repository},
-  url = {[https://github.com/ric-rivera/CLOUS-tokenization-metrics](https://github.com/ric-rivera/CLOUS-tokenization-metrics)},
-  note = {Independent research manuscript; not peer-reviewed}
+@article{rivera2026clous,
+  title   = {Estimating Cross-Lingual Tokenization Fragmentation Risk: A Frequency-Based Uniqueness Score for Geographic Entities},
+  author  = {Rivera, Richard},
+  year    = {2026},
+  journal = {Zenodo},
+  doi     = {10.5281/zenodo.23444200},
+  url     = {https://doi.org/10.5281/zenodo.23444200}
 }
 ```
