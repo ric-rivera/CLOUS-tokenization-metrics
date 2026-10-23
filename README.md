@@ -1,8 +1,11 @@
 # CLOUS: Cross-Linguistic Orthographic Uniqueness Score
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23444200.svg)](https://doi.org/10.5281/zenodo.23444200)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/ric-rivera/CLOUS-Tokenizer-Diagnostic)
 
 An independent, exploratory research project investigating character-level orthographic rarity and its relationship to multilingual tokenization fragmentation.
+
+📖 **Read the Paper on Zenodo:** [https://doi.org/10.5281/zenodo.23444200](https://doi.org/10.5281/zenodo.23444200)
 
 ## How This Started
 
@@ -14,17 +17,16 @@ This project began with a simple question:
 
 That question led to CLOUS, a multilingual benchmark, and an investigation into whether character-level rarity is associated with how tokenizers split country names.
 
-This was my first independent research project. The repository documents the resulting methodology, experiments, manuscript, and interactive application.
+This was my first independent research project. This repository documents the resulting methodology, experiments, data pipeline, and interactive application, while the final manuscript is archived on Zenodo.
 
 ## What I Built
 
-* A character-level scoring metric based on mean Shannon surprisal.
-* A dataset of 249 ISO-listed country and territory entries localized across eleven languages using Unicode CLDR.
-* Language-specific character-frequency profiles derived from Leipzig corpora.
-* A Python evaluation pipeline comparing CLOUS with tokenization results from six tokenizers.
-* Statistical comparisons against character count, UTF-8 byte length, and character-bigram surprisal.
-* A research manuscript documenting the methods, results, interpretations, and limitations.
-* An interactive Hugging Face application for exploring scores and tokenizer outputs.
+- A character-level scoring metric based on mean Shannon surprisal.
+- A dataset of 249 ISO-listed country and territory entries localized across eleven languages using Unicode CLDR.
+- Language-specific character-frequency profiles derived from Leipzig corpora.
+- A Python evaluation pipeline comparing CLOUS with tokenization results from six tokenizers.
+- Statistical comparisons against character count, UTF-8 byte length, and character-bigram surprisal.
+- An interactive Hugging Face application for exploring scores and tokenizer outputs.
 
 The project spans question formulation, data preparation, metric design, statistical evaluation, visualization, research writing, and application development.
 
@@ -36,10 +38,10 @@ Higher scores indicate that the string contains characters that are less common 
 
 CLOUS measures character-level orthographic rarity. It does not measure:
 
-* Cultural or semantic uniqueness.
-* How familiar a complete name is to a language model.
-* Whether a model understands an entity correctly.
-* The probability of hallucination or downstream task failure.
+- Cultural or semantic uniqueness.
+- How familiar a complete name is to a language model.
+- Whether a model understands an entity correctly.
+- The probability of hallucination or downstream task failure.
 
 Because the score uses individual character frequencies, it does not account for character order. Strings with the same character composition receive the same CLOUS score under the same frequency profile.
 
@@ -47,10 +49,10 @@ Because the score uses individual character frequencies, it does not account for
 
 The manuscript evaluates:
 
-* 249 country and territory entries.
-* Eleven languages.
-* Six tokenizers: GPT-4, GPT-4o, Llama 3, Gemma, mBERT, and XLM-R.
-* 65 valid language–tokenizer correlation tests, with one constant-output combination excluded.
+- 249 country and territory entries.
+- Eleven languages.
+- Six tokenizers: GPT-4, GPT-4o, Llama 3, Gemma, mBERT, and XLM-R.
+- 65 valid language–tokenizer correlation tests, with one constant-output combination excluded.
 
 Fragmentation is operationalized as character-normalized fertility:
 
@@ -62,10 +64,10 @@ This differs from word-level fertility measures. Results should be interpreted u
 
 Within the evaluated benchmark:
 
-* CLOUS was significantly associated with character-normalized fertility in 61 of 65 valid language–tokenizer combinations after Benjamini–Hochberg correction.
-* Associations were generally stronger for non-Latin scripts than for Latin-script languages.
-* CLOUS had a higher Spearman correlation than the character-bigram baseline in 45 of 65 combinations.
-* A pooled screening analysis reported ROC-AUC = 0.850 and F1 = 0.740 for identifying the highest-fertility quartile.
+- CLOUS was significantly associated with character-normalized fertility in 61 of 65 valid language–tokenizer combinations after Benjamini–Hochberg correction.
+- Associations were generally stronger for non-Latin scripts than for Latin-script languages.
+- CLOUS had a higher Spearman correlation than the character-bigram baseline in 45 of 65 combinations.
+- A pooled screening analysis reported ROC-AUC = 0.850 and F1 = 0.740 for identifying the highest-fertility quartile.
 
 These are results reported for this benchmark, not independently validated performance guarantees for new inputs.
 
@@ -73,19 +75,19 @@ The manuscript also compares CLOUS with length-based measures. Those comparisons
 
 ## Research Status and Limitations
 
-This is independent exploratory work. It has not been peer-reviewed or formally published.
+This is independent exploratory work archived on Zenodo. 
 
 Important boundaries include:
 
-* The main benchmark consists of country and territory names. Generalization to person names, organizations, addresses, or arbitrary text has not been established.
-* Character-frequency profiles depend on the selected corpus and may differ across domains and writing styles.
-* Correlation does not establish causation.
-* Pooled results may conceal differences between languages and tokenizers.
-* The manuscript does not document held-out validation of the reported screening performance.
-* Universal score thresholds and individualized token-cost predictions have not been established.
-* Lower token counts alone do not establish better model understanding or downstream performance.
+- The main benchmark consists of country and territory names. Generalization to person names, organizations, addresses, or arbitrary text has not been established.
+- Character-frequency profiles depend on the selected corpus and may differ across domains and writing styles.
+- Correlation does not establish causation.
+- Pooled results may conceal differences between languages and tokenizers.
+- The manuscript does not document held-out validation of the reported screening performance.
+- Universal score thresholds and individualized token-cost predictions have not been established.
+- Lower token counts alone do not establish better model understanding or downstream performance.
 
-The repository is shared to make the approach inspectable, support reproduction, and invite methodological feedback.
+This repository is shared to make the active data pipeline inspectable, support reproduction, and invite methodological feedback.
 
 ## 🚀 Interactive Application
 
@@ -95,7 +97,7 @@ The application lets users select a language profile, calculate a CLOUS score, a
 
 Users can enter strings beyond the original benchmark, but those inputs fall outside the study’s validated scope.
 
-Any risk labels or quartile-based messages in the application should be treated as exploratory benchmark-based indicators—not calibrated predictions for an individual input. In particular, the reported difference between benchmark quartiles does not establish an expected percentage increase for a newly entered name.
+Any risk labels or quartile-based messages in the application should be treated as exploratory benchmark-based indicators, not calibrated predictions for an individual input. In particular, the reported difference between benchmark quartiles does not establish an expected percentage increase for a newly entered name.
 
 ## Illustrative Example: Arabic Typography
 
@@ -107,11 +109,11 @@ See the manuscript for the tested strings and reported token counts.
 
 ## Repository Structure
 
-* `raw_corpora/`: Leipzig character and word frequency files used to construct reference profiles.
-* `cache/`: Serialized frequency maps and intermediate outputs, including `benchmark_results.csv`, `final_stats.csv`, and `clous_scores.csv`.
-* `CLOUS_pipeline.ipynb`: Main evaluation notebook.
-* `results/`: Generated figures and benchmark outputs.
-* `Rivera_2026_CLOUS_Tokenization_V6.pdf`: Research manuscript.
+- `raw_corpora/`: Leipzig character and word frequency files used to construct reference profiles.
+- `cache/`: Serialized frequency maps and intermediate outputs, including `benchmark_results.csv`, `final_stats.csv`, and `clous_scores.csv`.
+- `CLOUS_pipeline.ipynb`: Main evaluation notebook.
+- `results/`: Generated figures and benchmark outputs.
+*(Note: The finalized research manuscript is hosted on Zenodo, not in this repository.)*
 
 ## Reproducing the Analysis
 
@@ -126,17 +128,17 @@ Consult the notebook for dependencies, tokenizer configuration, and input-file r
 
 ## Potential Next Steps
 
-* Held-out evaluation on unseen entities.
-* Language-specific screening thresholds and uncertainty estimates.
-* More rigorous comparisons with length-based and n-gram baselines.
-* Separate evaluation on other named-entity types.
-* Tests of whether fragmentation differences correspond to downstream performance or practical cost differences.
+- Held-out evaluation on unseen entities.
+- Language-specific screening thresholds and uncertainty estimates.
+- More rigorous comparisons with length-based and n-gram baselines.
+- Separate evaluation on other named-entity types.
+- Tests of whether fragmentation differences correspond to downstream performance or practical cost differences.
 
 These are possible extensions, not completed results.
 
 ## Citation
 
-If you use the metric, code, or benchmark in your work, please cite the independent manuscript and identify the repository version or commit used.
+If you use the metric, code, or benchmark in your work, please cite the independent manuscript:
 
 ```bibtex
 @article{rivera2026clous,
@@ -145,6 +147,5 @@ If you use the metric, code, or benchmark in your work, please cite the independ
   year    = {2026},
   journal = {Zenodo},
   doi     = {10.5281/zenodo.23444200},
-  url     = {https://doi.org/10.5281/zenodo.23444200}
+  url     = {[https://doi.org/10.5281/zenodo.23444200](https://doi.org/10.5281/zenodo.23444200)}
 }
-```
